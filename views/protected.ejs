@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: linear-gradient(90deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            height: 100vh; /* Make the body fill the viewport height */
+            margin: 0; /* Remove default margin */
+        }
+
+        .protected {
+            text-align: center; /* Center the content */
+        }
+
+        /* Add some margin or padding to separate the elements if needed */
+        .protected h3 {
+            margin-bottom: 20px;
+        }
+
+        /* Style the button */
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Style the image */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Wrap h3 and button in a div for vertical alignment */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="protected">
+        <h3 class="protected h3">You have successfully authenticated user using passport.js</h3>
+
+        <!-- Wrap h3 and button in a div for vertical alignment -->
+        <div class="button-container">
+            <img src="data:image/png;base64,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" alt="image">
+            <button id="logoutButton" type="button">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        // Add a click event handler to the button
+        document.getElementById("logoutButton").addEventListener("click", function() {
+            // Send a GET request to the server's /logout route
+            fetch('/logout', { method: 'GET' })
+                .then(response => {
+                    if (response.status === 200) {
+                        // Redirect to the login page after successful logout
+                        window.location.href = "/login";
+                    } else {
+                        console.error('Logout failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during logout:', error);
+                });
+        });
+    </script>
+        
+
+</body>
+</html>
